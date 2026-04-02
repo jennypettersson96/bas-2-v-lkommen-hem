@@ -1,18 +1,21 @@
 
 
-## Add hero background image
+## Generate a logo for Klypans blåbär
 
-Copy the uploaded photo to the project and use it as a full-cover background image in the HeroSection, with a dark overlay to keep text readable.
+Create a clean, classic logo inspired by the uploaded image of hands cupping blueberries, fitting the blue-and-white country-style branding.
 
 ### Steps
 
-1. **Copy image**: `user-uploads://klypansblabar.jpg` → `public/images/klypansblabar.jpg` (public folder since it's a CSS background)
+1. **Generate logo** using the Nano banana image generation API (`google/gemini-2.5-flash-image`) with a prompt for a clean, minimal logo featuring cupped hands holding blueberries — simple enough to work as a favicon and navbar logo, with a transparent/white background and the blue color palette.
 
-2. **Update HeroSection.tsx**: Add inline `backgroundImage` style with the photo as a full-cover background, plus a semi-transparent dark/blue overlay div so the white text remains legible. Adjust text colors to white.
+2. **Copy generated logo** to `public/images/logo.png`
+
+3. **Update Navbar** to display the logo image next to the "Klypans blåbär" text
+
+4. **Update favicon** (`public/favicon.svg`) to a simplified blueberry icon version
 
 ### Technical details
-- Use `public/images/` so the image is referenced via URL (`/images/klypansblabar.jpg`), accounting for `BASE_URL`
-- Background: `background-size: cover; background-position: center;`
-- Overlay: absolute-positioned div with `bg-black/50` or `bg-primary/60`
-- Text: switch to `text-white` for heading and paragraph
+- Use `LOVABLE_API_KEY` with the image generation endpoint
+- Logo style: clean line art or simple illustration, country-classic feel, works at small sizes
+- Save to `public/images/` for use in navbar and favicon
 
