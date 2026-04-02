@@ -1,28 +1,28 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 
 const ContactSection = () => (
-  <section id="hitta-hit" className="py-20 scroll-mt-16">
+  <section id="hitta-hit" className="py-12 scroll-mt-16">
     <div className="container">
       <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Hitta hit</h2>
-      <div className="mt-10 grid gap-10 lg:grid-cols-2">
+      <div className="mt-6 grid gap-6 lg:grid-cols-2">
         {/* Contact info */}
-        <div className="grid gap-8 sm:grid-cols-3 lg:grid-cols-1 lg:gap-6">
+        <div className="grid gap-4">
           <div className="flex items-start gap-3">
-            <MapPin className="mt-1 h-6 w-6 shrink-0 text-primary" />
+            <MapPin className="mt-1 h-5 w-5 shrink-0 text-primary" />
             <div>
               <h3 className="font-semibold text-foreground">Adress</h3>
               <p className="text-sm text-muted-foreground">Klypen 100<br />464 63 Brålanda</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <Phone className="mt-1 h-6 w-6 shrink-0 text-primary" />
+            <Phone className="mt-1 h-5 w-5 shrink-0 text-primary" />
             <div>
               <h3 className="font-semibold text-foreground">Telefon</h3>
               <a href="tel:+46722228065" className="text-sm text-muted-foreground hover:text-primary transition-colors">072-222 80 65</a>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <Mail className="mt-1 h-6 w-6 shrink-0 text-primary" />
+            <Mail className="mt-1 h-5 w-5 shrink-0 text-primary" />
             <div>
               <h3 className="font-semibold text-foreground">E-post</h3>
               <a href="mailto:klypanshumleodling@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">klypanshumleodling@gmail.com</a>
