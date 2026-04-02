@@ -17,7 +17,7 @@ const HeroSection = () => {
           Välkommen till Klypans blåbär
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-white/90 sm:text-xl leading-relaxed">
-          Mitt i Dalslands vackra natur, vid Klypen 100 utanför Brålanda, odlar och skördar vi blåbär med kärlek och omtanke. Kom och upplev självplock, frisk luft och smaken av riktiga svenska blåbär.
+          Mitt i Dalslands vackra natur, vid Klypen 100 utanför Brålanda, odlar och skördar vi blåbär med kärlek och omtanke. Kom och upplev självplock, frisk luft Mitt i Dalslands vackra natur, vid Klypen 100 utanför Brålanda, odlar och skördar vi blåbär med kärlek och omtanke. Kom och upplev självplock, frisk luft och smaken av amerikanska blåbär odlade i svensk natur.
         </p>
         <div className="mt-8">
           <a
