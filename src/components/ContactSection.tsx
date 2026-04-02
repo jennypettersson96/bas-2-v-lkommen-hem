@@ -6,7 +6,7 @@ const ContactSection = () => (
       <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Hitta hit</h2>
       <div className="mt-6 grid gap-6 lg:grid-cols-2">
         {/* Contact info */}
-        <div className="grid gap-4">
+        <div className="grid gap-4 self-start">
           <div className="flex items-start gap-3">
             <MapPin className="mt-1 h-5 w-5 shrink-0 text-primary" />
             <div>
