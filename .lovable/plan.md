@@ -1,8 +1,9 @@
 
-## Fixa vertikalt utrymme i kontaktsektionen
 
-Problemet: kontaktinfo-kolumnen sträcker sig för att matcha kartans höjd, vilket skapar stora mellanrum mellan Adress, Telefon och E-post.
+## Gör kartan större i kontaktsektionen
 
-### Ändring i `src/components/ContactSection.tsx`
+### Ändringar i `src/components/ContactSection.tsx`
 
-Lägg till `self-start` på kontaktinfo-diven så den inte sträcks ut vertikalt för att matcha kartans höjd i grid-layouten.
+1. **Ändra grid-proportionerna** så kartan får mer horisontellt utrymme: `lg:grid-cols-2` → `lg:grid-cols-[1fr_2fr]` (kartan får dubbelt så bred kolumn)
+2. **Öka kartans höjd**: `aspect-video` → `min-h-[350px] h-full` så kartan fyller hela grid-radens höjd istället för att låsas till 16:9
+
