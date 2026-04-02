@@ -7,13 +7,13 @@ const AboutSection = () => (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
         {/* Text column */}
         <div className="space-y-4">
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed">
             Klypans blåbär drivs av oss, Glenn och Angelica Johansson med familj, vackert beläget i Klypan utanför Brålanda och omgivet av Dalslands skogar och natur. Här odlar vi våra blåbär med stor omsorg och ett genuint engagemang för att skapa en trivsam och naturnära upplevelse för alla som kommer hit.
           </p>
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed">
             Hos oss kan du plocka dina egna blåbär genom vårt självplock, eller köpa färdigplockade bär om du vill ta med något gott hem direkt.
           </p>
-          <p className="text-muted-foreground leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed">
             Vi uppdaterar öppettider och aktuell information löpande på våra sociala medier – allt efter hur blåbären mognar.
           </p>
           <div className="flex gap-4 pt-2">
