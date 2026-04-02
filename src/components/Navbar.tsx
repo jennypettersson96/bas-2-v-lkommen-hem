@@ -20,7 +20,7 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         <a href="#" className="flex items-center gap-2 text-xl font-bold text-primary">
-          <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="Klypans blåbär logotyp" className="h-10 w-auto" />
+          <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="Klypans blåbär logotyp" <img src={`${import.meta.env.BASE_URL}images/logo.png`} alt="Klypans blåbär logotyp" className="h-14 w-auto" /> />
           Klypans blåbär
         </a>
 
