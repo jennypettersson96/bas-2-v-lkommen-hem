@@ -44,7 +44,7 @@ const AboutSection = () => (
             <img
               src="/about-1.jpg"
               alt="Blåbärsplockning"
-              className="w-full aspect-[4/3] object-cover"
+              className="w-full aspect-[3/2] object-cover"
             />
           </div>
           <div className="grid grid-cols-2 gap-4">
