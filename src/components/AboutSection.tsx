@@ -56,7 +56,7 @@ const AboutSection = () => (
           <img
             src="/about-3.jpg"
             alt="Familjen med hund"
-            className="w-full aspect-[3/4] object-cover object-bottom"
+            className="w-full aspect-[3/4] object-cover object-center"
           />
         </div>
       </div>
