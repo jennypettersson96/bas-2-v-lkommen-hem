@@ -4,10 +4,13 @@ const AboutSection = () => (
       <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Om oss</h2>
       <div className="mt-8 space-y-4 max-w-3xl">
         <p className="text-muted-foreground leading-relaxed">
-          Klypans blåbär ligger vackert beläget vid Klypen 100 i Brålanda, omgivet av Dalslands skog och natur. Här har vi i generationer värnat om den svenska blåbärstraditionen och med stor omsorg skördat naturens egna bär.
+          Klypans blåbär drivs av oss, Glenn och Angelica Johansson med familj, vackert beläget i Klypan utanför Brålanda och omgivet av Dalslands skogar och natur. Här odlar vi våra blåbär med stor omsorg och ett genuint engagemang för att skapa en trivsam och naturnära upplevelse för alla som kommer hit.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          Vår passion är att erbjuda de freshaste blåbären direkt från mark till mun. Oavsett om du vill plocka själv eller köpa färdigplockade bär, är du varmt välkommen till oss. Vi tror på enkelhet, kvalitet och en äkta naturupplevelse.
+          Hos oss kan du plocka dina egna blåbär genom vårt självplock, eller köpa färdigplockade bär om du vill ta med något gott hem direkt.
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          Vi uppdaterar öppettider och aktuell information löpande på Facebook och Instagram – allt efter hur blåbären mognar.
         </p>
       </div>
     </div>
