@@ -4,7 +4,7 @@ const ContactSection = () => (
   <section id="hitta-hit" className="py-12 scroll-mt-16">
     <div className="container">
       <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Hitta hit</h2>
-      <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_2fr]">
+      <div className="mt-6 grid gap-6 <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_3fr]">">
         {/* Contact info */}
         <div className="grid gap-4 self-start">
           <div className="flex items-start gap-3">
