@@ -1,13 +1,35 @@
 
 
-## Klickbara sociala medier-ikoner i Om oss
+## Om oss med bilder – enklare och snyggare layout
 
-### Ändring i `src/components/AboutSection.tsx`
+### Reviderad design
 
-1. Importera `Facebook` och `Instagram` ikoner från `lucide-react`
-2. Under tredje stycket, lägg till en rad med två klickbara ikoner (Facebook och Instagram) som länkar till:
-   - Facebook: `https://www.facebook.com/dalslandsblabar/`
-   - Instagram: `https://www.instagram.com/klypansblabar/`
-3. Ikonerna får hover-effekt och öppnas i ny flik (`target="_blank"`)
-4. Texten "Facebook och Instagram" i tredje stycket förenklas till "sociala medier" eller behålls som vanlig text (utan länk), eftersom ikonerna tar över länkfunktionen
+Istället för masonry-rutnät, en renare tvåkolumns-layout med en **staplad bildkolumn** där bilderna har olika storlekar för visuellt intresse:
+
+```text
+Desktop (md+):
+┌──────────────────────┬──────────────────────┐
+│  Om oss              │                      │
+│                      │  ┌──────────────────┐ │
+│  Text stycke 1       │  │                  │ │
+│  Text stycke 2       │  │    Stor bild     │ │
+│  Text stycke 3       │  │                  │ │
+│  [FB] [IG]           │  └──────────────────┘ │
+│                      │  ┌────────┐┌────────┐ │
+│                      │  │ Bild 2 ││ Bild 3 │ │
+│                      │  └────────┘└────────┘ │
+└──────────────────────┴──────────────────────┘
+
+Mobil: Text → bilder under, alla i en kolumn
+```
+
+### Ändringar
+
+1. **Kopiera bilderna** till `public/` som `about-1.jpg`, `about-2.jpg`, `about-3.jpg`
+2. **Uppdatera `src/components/AboutSection.tsx`**:
+   - Layout: `grid grid-cols-1 md:grid-cols-2 gap-10 items-center`
+   - Ta bort `max-w-3xl` på textdelen
+   - Höger kolumn: en stor bild (aspect-[4/3]) ovanpå, två mindre (aspect-square) sida vid sida under med `grid-cols-2 gap-4`
+   - Alla bilder: `rounded-xl`, `object-cover`, `shadow-lg`
+   - Rubrik "Om oss" placeras ovanför hela gridet
 
