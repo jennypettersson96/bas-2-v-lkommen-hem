@@ -1,13 +1,15 @@
 
 
-## Flytta bilderna under texten i Om oss
+## Fixa bildbeskärningen i Om oss
 
-Ändra `src/components/AboutSection.tsx` från tvåkolumns-layout till en enkolumns-layout där bilderna placeras under texten.
+### Problem
+`object-cover` med `aspect-[3/2]` beskär bilderna från mitten som standard, vilket kan klippa bort personer. Bilderna behöver `object-position` för att centrera på personerna.
 
-### Ändringar
+### Ändringar i `src/components/AboutSection.tsx`
 
-1. Ta bort `grid grid-cols-1 md:grid-cols-2 gap-10 items-start` – använd en enkel vertikal layout istället
-2. Texten och sociala medier-ikonerna ligger kvar som de är
-3. Bildgalleriet placeras under texten i ett `grid grid-cols-1 md:grid-cols-3 gap-4` rutnät – alla tre bilder i rad på desktop, staplat på mobil
-4. Alla bilder får `aspect-[3/2]`, `rounded-xl`, `shadow-lg`, `object-cover` för enhetligt utseende
+1. Lägg till `object-top` eller `object-center` på bilderna beroende på innehåll – för porträttbilder med personer fungerar `object-top` bättre eftersom ansikten oftast är i övre delen
+2. Ändra aspect ratio till `aspect-[4/3]` för att ge mer vertikalt utrymme och visa mer av personerna
+3. Alla tre bilder: `className="w-full aspect-[4/3] object-cover object-top"`
+
+Detta ger mer utrymme vertikalt och fokuserar beskärningen uppåt där personerna typiskt befinner sig.
 
