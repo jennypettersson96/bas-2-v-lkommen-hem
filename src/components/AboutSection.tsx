@@ -4,7 +4,7 @@ const AboutSection = () => (
   <section id="om-oss" className="py-20 scroll-mt-16">
     <div className="container">
       <h2 className="text-3xl font-bold text-foreground sm:text-4xl mb-10">Om oss</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
         {/* Text column */}
         <div className="space-y-4">
           <p className="text-muted-foreground leading-relaxed">
