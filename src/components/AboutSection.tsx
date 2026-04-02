@@ -52,14 +52,14 @@ const AboutSection = () => (
               <img
                 src="/about-2.jpg"
                 alt="Färska blåbär"
-                className="w-full aspect-square object-cover"
+                className="w-full aspect-[4/3] object-cover"
               />
             </div>
             <div className="overflow-hidden rounded-xl shadow-lg">
               <img
                 src="/about-3.jpg"
                 alt="Familjen med hund"
-                className="w-full aspect-square object-cover"
+                className="w-full aspect-[4/3] object-cover"
               />
             </div>
           </div>
