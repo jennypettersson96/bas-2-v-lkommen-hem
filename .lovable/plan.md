@@ -1,20 +1,13 @@
 
 
-## Förbättra Om oss-layouten
+## Flytta bilderna under texten i Om oss
 
-### Problem
-- `items-center` gör att texten centreras vertikalt mot den höga bildkolumnen, vilket skapar mycket tom yta ovanför texten
-- Bildkolumnen tar för mycket vertikal plats jämfört med textmängden
-- Dålig visuell balans mellan kolumnerna
+Ändra `src/components/AboutSection.tsx` från tvåkolumns-layout till en enkolumns-layout där bilderna placeras under texten.
 
-### Lösning
+### Ändringar
 
-Ändra `src/components/AboutSection.tsx`:
-
-1. Byt `items-center` till `items-start` så text och bilder börjar på samma nivå
-2. Ändra den stora bilden från `aspect-[4/3]` till `aspect-[3/2]` för att minska höjden
-3. Ändra de två små bilderna från `aspect-square` till `aspect-[4/3]` för bättre proportion
-4. Lägg till `text-lg` på paragraferna för att ge texten mer visuell tyngd och fylla kolumnen bättre
-
-Detta ger en mer balanserad sektion där text och bilder startar i linje och bilderna inte dominerar.
+1. Ta bort `grid grid-cols-1 md:grid-cols-2 gap-10 items-start` – använd en enkel vertikal layout istället
+2. Texten och sociala medier-ikonerna ligger kvar som de är
+3. Bildgalleriet placeras under texten i ett `grid grid-cols-1 md:grid-cols-3 gap-4` rutnät – alla tre bilder i rad på desktop, staplat på mobil
+4. Alla bilder får `aspect-[3/2]`, `rounded-xl`, `shadow-lg`, `object-cover` för enhetligt utseende
 
