@@ -3,9 +3,9 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
+  { label: "Välkommen", id: "valkommen" },
   { label: "Om oss", id: "om-oss" },
-  { label: "Tjänster", id: "tjanster" },
-  { label: "Kontakt", id: "kontakt" },
+  { label: "Hitta hit", id: "hitta-hit" },
 ];
 
 const scrollTo = (id: string) => {
@@ -19,18 +19,17 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <a href="#" className="text-xl font-bold text-foreground">
-          [Logo]
+        <a href="#" className="text-xl font-bold text-primary">
+          Klypans blåbär
         </a>
 
-        {/* Desktop */}
         <ul className="hidden gap-8 md:flex">
           {navLinks.map((link) => (
             <li key={link.id}>
               <a
                 href={`#${link.id}`}
                 onClick={(e) => { e.preventDefault(); scrollTo(link.id); }}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary cursor-pointer"
               >
                 {link.label}
               </a>
@@ -38,7 +37,6 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile toggle */}
         <button
           className="md:hidden text-foreground"
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -48,7 +46,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <div
         className={cn(
           "overflow-hidden transition-all duration-300 md:hidden",
@@ -61,7 +58,7 @@ const Navbar = () => {
               <a
                 href={`#${link.id}`}
                 onClick={(e) => { e.preventDefault(); setMobileOpen(false); scrollTo(link.id); }}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground cursor-pointer"
+                className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary cursor-pointer"
               >
                 {link.label}
               </a>
