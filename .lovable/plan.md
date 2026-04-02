@@ -1,12 +1,17 @@
 
-## Fixa bildsökvägar för GitHub Pages
 
-### Problem
-Bilderna i Om oss-sektionen använder absoluta sökvägar (`/about-1.jpg`) som inte inkluderar GitHub Pages base URL (`/repo-name/`). HeroSection löser detta korrekt med `import.meta.env.BASE_URL`.
+## Bakgrundsbild på "Vårt erbjudande"-sektionen
 
-### Ändring i `src/components/AboutSection.tsx`
+### Ändringar i projektet
 
-1. Lägg till `const baseUrl = import.meta.env.BASE_URL;` i komponenten
-2. Ändra bildsökvägarna från `/about-1.jpg` till `` `${baseUrl}about-1.jpg` `` (samma mönster för alla tre bilder)
+1. **Kopiera bilden** till `public/images/` (samma mönster som hero-bilden)
+2. **Uppdatera `ServicesSection.tsx`**:
+   - Lägg till bakgrundsbild med `background-image`, `background-size: cover`, `background-position: center`
+   - Lägg till en mörk overlay (`bg-black/50`) för läsbarhet, likt HeroSection
+   - Ändra texten till vit (`text-white`) och ge korten semi-transparenta bakgrunder
+   - Använd `import.meta.env.BASE_URL` för korrekt sökväg på GitHub Pages
+   - Ge sektionen mer padding vertikalt (`py-28` eller liknande) för att "space up"
 
-Detta är samma mönster som redan används i `HeroSection.tsx`.
+### Resultat
+Sektionen får samma visuella kraft som hero-sektionen, med blåbärsbilden synlig bakom korten och en snygg overlay för kontrast.
+
