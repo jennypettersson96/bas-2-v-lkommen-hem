@@ -1,3 +1,5 @@
+import { Facebook, Instagram } from "lucide-react";
+
 const AboutSection = () => (
   <section id="om-oss" className="py-20 scroll-mt-16">
     <div className="container">
@@ -10,8 +12,28 @@ const AboutSection = () => (
           Hos oss kan du plocka dina egna blåbär genom vårt självplock, eller köpa färdigplockade bär om du vill ta med något gott hem direkt.
         </p>
         <p className="text-muted-foreground leading-relaxed">
-          Vi uppdaterar öppettider och aktuell information löpande på Facebook och Instagram – allt efter hur blåbären mognar.
+          Vi uppdaterar öppettider och aktuell information löpande på våra sociala medier – allt efter hur blåbären mognar.
         </p>
+        <div className="flex gap-4 pt-2">
+          <a
+            href="https://www.facebook.com/dalslandsblabar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="text-muted-foreground hover:text-primary transition-colors"
+          >
+            <Facebook size={28} />
+          </a>
+          <a
+            href="https://www.instagram.com/klypansblabar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="text-muted-foreground hover:text-primary transition-colors"
+          >
+            <Instagram size={28} />
+          </a>
+        </div>
       </div>
     </div>
   </section>
