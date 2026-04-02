@@ -25,7 +25,7 @@ const ContactSection = () => (
             <Mail className="mt-1 h-6 w-6 shrink-0 text-primary" />
             <div>
               <h3 className="font-semibold text-foreground">E-post</h3>
-              <p className="text-sm text-muted-foreground">[info@klypansblabar.se]</p>
+              <a href="mailto:klypanshumleodling@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">klypanshumleodling@gmail.com</a>
             </div>
           </div>
         </div>
