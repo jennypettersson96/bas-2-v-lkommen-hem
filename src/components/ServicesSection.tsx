@@ -15,22 +15,35 @@ const offerings = [
   },
 ];
 
-const ServicesSection = () => (
-  <section id="erbjudande" className="bg-primary/5 py-20 scroll-mt-16">
-    <div className="container">
-      <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Vårt erbjudande</h2>
-      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {offerings.map((s, i) => (
-          <Card key={i} className="bg-card border-border">
-            <CardHeader>
-              <CardTitle className="text-lg text-foreground">{s.title}</CardTitle>
-              <CardDescription>{s.description}</CardDescription>
-            </CardHeader>
-          </Card>
-        ))}
+const ServicesSection = () => {
+  const baseUrl = import.meta.env.BASE_URL;
+
+  return (
+    <section
+      id="erbjudande"
+      className="relative py-28 scroll-mt-16 overflow-hidden"
+      style={{
+        backgroundImage: `url(${baseUrl}images/erbjudande-bg.jpg)`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className="absolute inset-0 bg-black/50" />
+      <div className="container relative z-10">
+        <h2 className="text-3xl font-bold text-white sm:text-4xl">Vårt erbjudande</h2>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {offerings.map((s, i) => (
+            <Card key={i} className="bg-white/10 backdrop-blur-sm border-white/20">
+              <CardHeader>
+                <CardTitle className="text-lg text-white">{s.title}</CardTitle>
+                <CardDescription className="text-white/80">{s.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default ServicesSection;
