@@ -1,18 +1,19 @@
 
 
-## Fixa stavningen i den ursprungliga logotypen
+## Redigera logotypen: fixa all text
 
-Använd bild-redigerings-API:t för att redigera den **tidigare** logotypen (den som användaren tyckte var finare) och ändra texten från "bläbär" till "blåbär" — utan att ändra stilen.
+Den uppladdade logotypen har textfel som ska korrigeras:
+1. **"BLÄBÄR"** → **"BLÅBÄR"** (ä → å)
+2. **"SWEISH BLUEBERRIES"** → **"AMERIKANSKA BLÅBÄR"**
 
 ### Steg
 
-1. **Redigera logotypen** med `--edit-image` på den nuvarande `public/images/logo.png` (eller generera en ny med samma stil som den ursprungliga) — instruktion: "Change the text from 'bläbär' to 'blåbär' (replace ä with å). Keep everything else exactly the same."
-
-2. **Ersätt** `public/images/logo.png` med resultatet.
-
-3. **Kopiera** till `/mnt/documents/logo.png` för nedladdning.
+1. Kopiera den uppladdade bilden (`user-uploads://image-4.png`) till `/tmp/logo-input.png`
+2. Använd `--edit-image` med AI-gateway-scriptet för att redigera texten: ändra "BLÄBÄR" till "BLÅBÄR" och ersätt "SWEISH BLUEBERRIES" (eller liknande engelsk text) med "AMERIKANSKA BLÅBÄR" — behåll allt annat exakt som det är
+3. Ersätt `public/images/logo.png` med resultatet
+4. Kopiera till `/mnt/documents/logo.png` för nedladdning
 
 ### Tekniska detaljer
-- Använd `edit-image` via ai-gateway-scriptet med modellen `google/gemini-2.5-flash-image`
-- Om edit-image inte ger bra resultat, generera en ny med en prompt som matchar den ursprungliga stilen (händer med blåbär, blå linje-illustration, symmetrisk, med texten "Klypans blåbär")
+- Modell: `google/gemini-2.5-flash-image` via `--edit-image`
+- Om resultatet inte blir bra, prova med `google/gemini-3-pro-image-preview` eller `google/gemini-3.1-flash-image-preview`
 
