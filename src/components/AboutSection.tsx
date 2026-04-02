@@ -1,6 +1,9 @@
 import { Facebook, Instagram } from "lucide-react";
 
-const AboutSection = () => (
+const AboutSection = () => {
+  const baseUrl = import.meta.env.BASE_URL;
+
+  return (
   <section id="om-oss" className="py-20 scroll-mt-16">
     <div className="container">
       <h2 className="text-3xl font-bold text-foreground sm:text-4xl mb-10">Om oss</h2>
@@ -40,21 +43,21 @@ const AboutSection = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
         <div className="overflow-hidden rounded-xl shadow-lg">
           <img
-            src="/about-1.jpg"
+            src={`${baseUrl}about-1.jpg`}
             alt="Blåbärsplockning"
             className="w-full aspect-[3/4] object-cover object-bottom"
           />
         </div>
         <div className="overflow-hidden rounded-xl shadow-lg">
           <img
-            src="/about-2.jpg"
+            src={`${baseUrl}about-2.jpg`}
             alt="Färska blåbär"
             className="w-full aspect-[3/4] object-cover object-bottom"
           />
         </div>
         <div className="overflow-hidden rounded-xl shadow-lg">
           <img
-            src="/about-3.jpg"
+            src={`${baseUrl}about-3.jpg`}
             alt="Familjen med hund"
             className="w-full aspect-[3/4] object-cover object-center"
           />
@@ -62,6 +65,7 @@ const AboutSection = () => (
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default AboutSection;
