@@ -1,6 +1,9 @@
 import { Facebook, Instagram } from "lucide-react";
 
-const AboutSection = () => (
+const AboutSection = () => {
+  const baseUrl = import.meta.env.BASE_URL;
+
+  return (
   <section id="om-oss" className="py-20 scroll-mt-16">
     <div className="container">
       <h2 className="text-3xl font-bold text-foreground sm:text-4xl mb-10">Om oss</h2>
