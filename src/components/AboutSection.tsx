@@ -43,21 +43,21 @@ const AboutSection = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
         <div className="overflow-hidden rounded-xl shadow-lg">
           <img
-            src="/about-1.jpg"
+            src={`${baseUrl}about-1.jpg`}
             alt="Blåbärsplockning"
             className="w-full aspect-[3/4] object-cover object-bottom"
           />
         </div>
         <div className="overflow-hidden rounded-xl shadow-lg">
           <img
-            src="/about-2.jpg"
+            src={`${baseUrl}about-2.jpg`}
             alt="Färska blåbär"
             className="w-full aspect-[3/4] object-cover object-bottom"
           />
         </div>
         <div className="overflow-hidden rounded-xl shadow-lg">
           <img
-            src="/about-3.jpg"
+            src={`${baseUrl}about-3.jpg`}
             alt="Familjen med hund"
             className="w-full aspect-[3/4] object-cover object-center"
           />
