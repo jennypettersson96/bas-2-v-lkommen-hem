@@ -1,19 +1,17 @@
 
 
-## Redigera logotypen: fixa all text
+## Ta bort bakgrunden från logotypen
 
-Den uppladdade logotypen har textfel som ska korrigeras:
-1. **"BLÄBÄR"** → **"BLÅBÄR"** (ä → å)
-2. **"SWEISH BLUEBERRIES"** → **"AMERIKANSKA BLÅBÄR"**
+Använd bild-redigerings-API:t för att ta bort den vita bakgrunden från den nuvarande logotypen och spara resultatet med transparent bakgrund.
 
 ### Steg
 
-1. Kopiera den uppladdade bilden (`user-uploads://image-4.png`) till `/tmp/logo-input.png`
-2. Använd `--edit-image` med AI-gateway-scriptet för att redigera texten: ändra "BLÄBÄR" till "BLÅBÄR" och ersätt "SWEISH BLUEBERRIES" (eller liknande engelsk text) med "AMERIKANSKA BLÅBÄR" — behåll allt annat exakt som det är
-3. Ersätt `public/images/logo.png` med resultatet
-4. Kopiera till `/mnt/documents/logo.png` för nedladdning
+1. Kopiera AI-gateway-scriptet till `/tmp/lovable_ai.py`
+2. Använd `--edit-image` på `public/images/logo.png` med instruktionen "Remove the white background, make it fully transparent. Keep the illustration and text exactly as they are."
+3. Spara resultatet till `/mnt/documents/logo_transparent.png` för nedladdning
+4. Ersätt även `public/images/logo.png` med den transparenta versionen
 
 ### Tekniska detaljer
 - Modell: `google/gemini-2.5-flash-image` via `--edit-image`
-- Om resultatet inte blir bra, prova med `google/gemini-3-pro-image-preview` eller `google/gemini-3.1-flash-image-preview`
+- Om resultatet inte blir bra, prova `google/gemini-3-pro-image-preview`
 
