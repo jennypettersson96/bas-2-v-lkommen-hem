@@ -4,7 +4,7 @@ const ContactSection = () => (
   <section id="hitta-hit" className="py-12 scroll-mt-16">
     <div className="container">
       <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Hitta hit</h2>
-      <div className="mt-6 grid gap-6 lg:grid-cols-2">
+      <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_2fr]">
         {/* Contact info */}
         <div className="grid gap-4 self-start">
           <div className="flex items-start gap-3">
@@ -31,7 +31,7 @@ const ContactSection = () => (
         </div>
 
         {/* Embedded map */}
-        <div className="aspect-video w-full overflow-hidden rounded-lg border border-border">
+        <div className="min-h-[350px] h-full w-full overflow-hidden rounded-lg border border-border">
           <iframe
             title="Karta till Klypans blåbär"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2100!2d12.3!3d58.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTjCsDM2JzAwLjAiTiAxMsKwMTgnMDAuMCJF!5e0!3m2!1ssv!2sse!4v1700000000000"
