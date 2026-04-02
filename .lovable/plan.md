@@ -1,50 +1,18 @@
 
 
-## Customize site for Klypans blåbär
+## Add hero background image
 
-Transform the template into a branded site for **Klypans blåbär**, a blueberry farm at Klypen 100, Brålanda, Sweden. Blue and white color scheme with classic, clean country style.
+Copy the uploaded photo to the project and use it as a full-cover background image in the HeroSection, with a dark overlay to keep text readable.
 
-### 1. Update color theme (`src/index.css`)
-- Change `--primary` to a blueberry blue (e.g. `220 70% 45%`)
-- Adjust `--primary-foreground` to white
-- Keep background white, use soft blue tints for muted/secondary/accent
-- Subtle warm touches for the "country" feel
+### Steps
 
-### 2. Update Navbar (`src/components/Navbar.tsx`)
-- Logo text: "Klypans blåbär"
-- Nav links: "Välkommen", "Om oss", "Hitta hit"
-- Link IDs: `valkommen`, `om-oss`, `hitta-hit`
+1. **Copy image**: `user-uploads://klypansblabar.jpg` → `public/images/klypansblabar.jpg` (public folder since it's a CSS background)
 
-### 3. Update Hero (`src/components/HeroSection.tsx`)
-- Add `id="valkommen"` for scroll targeting
-- Heading: "Välkommen till Klypans blåbär"
-- Subtext: placeholder about the blueberry farm in Dalsland, self-pick, nature experience
-- CTA button: "Hitta hit" linking to `#hitta-hit`
-- Country-style background tint
-
-### 4. Update About (`src/components/AboutSection.tsx`)
-- Heading: "Om oss"
-- Placeholder text about the farm's history, location in Brålanda, passion for blueberries
-
-### 5. Update Services section → Offerings (`src/components/ServicesSection.tsx`)
-- Heading: "Vårt erbjudande" (or similar)
-- Cards: Självplock (self-pick blueberries), Färska blåbär (fresh blueberries for sale), Naturupplevelse (nature experience/guided visits)
-- Relevant descriptions for each
-
-### 6. Update Contact → Hitta hit (`src/components/ContactSection.tsx`)
-- Section id: `hitta-hit`, heading: "Hitta hit"
-- Placeholder contact info (email, phone, address at Klypen 100, 464 63 Brålanda)
-- Add embedded Bing Maps iframe showing the location
-
-### 7. Update Footer (`src/components/Footer.tsx`)
-- Company name: "Klypans blåbär"
-
-### 8. Update page title (`index.html`)
-- Title: "Klypans blåbär"
+2. **Update HeroSection.tsx**: Add inline `backgroundImage` style with the photo as a full-cover background, plus a semi-transparent dark/blue overlay div so the white text remains legible. Adjust text colors to white.
 
 ### Technical details
-- All changes are to existing files, no new files needed
-- Color variables updated in CSS custom properties (HSL format)
-- Map embed uses an iframe with Bing Maps pointing to Klypen 100, Brålanda
-- Placeholder text in Swedish, ready for the user to refine later
+- Use `public/images/` so the image is referenced via URL (`/images/klypansblabar.jpg`), accounting for `BASE_URL`
+- Background: `background-size: cover; background-position: center;`
+- Overlay: absolute-positioned div with `bg-black/50` or `bg-primary/60`
+- Text: switch to `text-white` for heading and paragraph
 
