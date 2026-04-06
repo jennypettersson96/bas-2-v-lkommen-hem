@@ -1,21 +1,24 @@
 
 
-## Uppdatera Öppettider-sektionens design
+## Flytta "Vårt erbjudande" ovanför "Öppettider"
 
-### Ändringar i `src/components/OpeningHoursSection.tsx`
+Byt ordningen på komponenterna i `src/pages/Index.tsx` så att `<ServicesSection />` renderas före `<OpeningHoursSection />`.
 
-1. **Layout som matchar övriga sektioner** — Byt från `max-w-2xl` + centrerad text till `container` med vänsterjusterad rubrik (samma mönster som AboutSection)
+### Ändring i `src/pages/Index.tsx`
 
-2. **"Vecka" som rubrik** — Separera "Vecka"-raden från övriga dagar. Visa den som en underrubrik (t.ex. `text-lg font-semibold` med veckonumret) ovanför dagslistan, inte som en tabellrad.
+Nuvarande ordning:
+```
+<AboutSection />
+<OpeningHoursSection />
+<ServicesSection />
+```
 
-3. **Ta bort tabellutseendet** — Ersätt `<table>` med en enkel lista (`div`-baserad) utan ramar/border. Varje dag visas som en rad med label till vänster och tid till höger, med subtil separator (bara en tunn linje eller spacing). Ta bort `rounded-lg border bg-card`.
+Ny ordning:
+```
+<AboutSection />
+<ServicesSection />
+<OpeningHoursSection />
+```
 
-4. **Kommentar vänsterjusterad** — Flytta kommentaren till vänsterjusterad istället för centrerad.
-
-### Resultat
-- Rubrik "Öppettider" vänsterjusterad, `text-3xl font-bold`
-- Under den: "Vecka 15" som en underrubrik
-- Dagarna listade utan tabellramar, med dag till vänster och tid till höger
-- Kommentar i kursiv under listan
-- Samma container-bredd och padding som "Om oss"
+Uppdatera även eventuella navigeringslänkar i `Navbar.tsx` om de förlitar sig på sektionsordningen.
 
