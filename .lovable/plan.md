@@ -1,36 +1,21 @@
 
 
-## Öppettider-sektion med data från Google Sheets
+## Uppdatera Öppettider-sektionens design
 
-### Vad jag hittade
-Kalkylbladet är publicerat och jag kan läsa kolumn A (etiketterna):
-- **Vecka** (veckonummer)
-- **Måndag–Söndag** (öppettider per dag)
-- **Kommentar** (extra info)
+### Ändringar i `src/components/OpeningHoursSection.tsx`
 
-Kolumn B (själva datan/tiderna) verkar vara tom just nu. Planen fungerar oavsett — sektionen hämtar live-data från bladet.
+1. **Layout som matchar övriga sektioner** — Byt från `max-w-2xl` + centrerad text till `container` med vänsterjusterad rubrik (samma mönster som AboutSection)
 
-### Plan
+2. **"Vecka" som rubrik** — Separera "Vecka"-raden från övriga dagar. Visa den som en underrubrik (t.ex. `text-lg font-semibold` med veckonumret) ovanför dagslistan, inte som en tabellrad.
 
-1. **Skapa `src/components/OpeningHoursSection.tsx`**
-   - Vid sidladdning: hämta CSV från `https://docs.google.com/spreadsheets/d/1Z-PUPu7kdBqM8Gk1yV_AMucKfmn2TXl2R5CjgBIwJ5U/pub?output=csv`
-   - Parsa rad-för-rad: kolumn A = etikett, kolumn B = värde
-   - Visa i en snygg tabell/lista med veckodagar och tider
-   - Visa "Kommentar" separat under tabellen
-   - Visa laddningsindikator medan data hämtas, och fallback-meddelande vid fel
+3. **Ta bort tabellutseendet** — Ersätt `<table>` med en enkel lista (`div`-baserad) utan ramar/border. Varje dag visas som en rad med label till vänster och tid till höger, med subtil separator (bara en tunn linje eller spacing). Ta bort `rounded-lg border bg-card`.
 
-2. **Uppdatera `src/pages/Index.tsx`**
-   - Importera och lägg in `OpeningHoursSection` direkt efter `AboutSection`
+4. **Kommentar vänsterjusterad** — Flytta kommentaren till vänsterjusterad istället för centrerad.
 
-3. **Uppdatera navigeringen i `Navbar.tsx`**
-   - Lägg till en länk "Öppettider" som scrollar till `#oppettider`
-
-### Tekniska detaljer
-- Ingen backend behövs — Google Sheets "Publicera på webben" ger en publik CSV-URL
-- Data hämtas med `fetch` + `useEffect` vid varje sidladdning, så ändringar i kalkylbladet syns direkt
-- Enkel CSV-parsning (split på komma/newline) utan externa bibliotek
-- Sektionen placeras mellan "Om oss" och "Vårt erbjudande"
-
-### Viktigt
-Fyll i kolumn B i kalkylbladet med öppettiderna (t.ex. "10:00–16:00") så visas de automatiskt på sajten.
+### Resultat
+- Rubrik "Öppettider" vänsterjusterad, `text-3xl font-bold`
+- Under den: "Vecka 15" som en underrubrik
+- Dagarna listade utan tabellramar, med dag till vänster och tid till höger
+- Kommentar i kursiv under listan
+- Samma container-bredd och padding som "Om oss"
 
