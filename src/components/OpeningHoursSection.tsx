@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const SHEET_CSV_URL =
-  "https://docs.google.com/spreadsheets/d/1Z-PUPu7kdBqM8Gk1yV_AMucKfmn2TXl2R5CjgBIwJ5U/pub?output=csv";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRuadvm-cDHAuU_SYFyYq4uNzF3nB2MFmSe4JFWXTnv-21APzdqknPeB7zPLtBhLmV1qIziXPxmbnw-/pub?output=csv";
 
 interface Row {
   label: string;
