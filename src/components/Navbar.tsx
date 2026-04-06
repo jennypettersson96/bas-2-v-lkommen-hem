@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 const navLinks = [
   { label: "Välkommen", id: "valkommen" },
   { label: "Om oss", id: "om-oss" },
+  { label: "Öppettider", id: "oppettider" },
   { label: "Hitta hit", id: "hitta-hit" },
 ];
 
