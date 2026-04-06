@@ -93,7 +93,7 @@ const OpeningHoursSection = () => {
             </div>
 
             {comment && comment.value && (
-              <p className="mt-6 text-lg text-muted-foreground italic">
+              <p className="mt-6 text-base text-muted-foreground italic">
                 {comment.value}
               </p>
             )}
