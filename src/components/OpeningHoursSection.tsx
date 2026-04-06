@@ -45,53 +45,55 @@ const OpeningHoursSection = () => {
   const comment = rows.find(
     (r) => r.label.toLowerCase() === "kommentar" || r.label.toLowerCase() === "comment"
   );
+
+  const weekRow = rows.find((r) => r.label.toLowerCase().startsWith("vecka"));
+
   const dataRows = rows.filter(
     (r) =>
       r.label.toLowerCase() !== "kommentar" &&
-      r.label.toLowerCase() !== "comment"
+      r.label.toLowerCase() !== "comment" &&
+      r !== weekRow
   );
 
   return (
-    <section id="oppettider" className="py-20 bg-muted/40">
-      <div className="container max-w-2xl">
-        <h2 className="text-3xl font-bold text-center text-foreground mb-10">
+    <section id="oppettider" className="py-20 bg-muted/40 scroll-mt-16">
+      <div className="container">
+        <h2 className="text-3xl font-bold text-foreground sm:text-4xl mb-2">
           Öppettider
         </h2>
 
+        {weekRow && (
+          <p className="text-lg font-semibold text-muted-foreground mb-8">
+            {weekRow.label} {weekRow.value && `– ${weekRow.value}`}
+          </p>
+        )}
+
         {loading && (
-          <p className="text-center text-muted-foreground">Laddar öppettider…</p>
+          <p className="text-muted-foreground">Laddar öppettider…</p>
         )}
 
         {error && (
-          <p className="text-center text-muted-foreground">
+          <p className="text-muted-foreground">
             Kunde inte hämta öppettider. Försök igen senare.
           </p>
         )}
 
         {!loading && !error && (
           <>
-            <div className="rounded-lg border bg-card overflow-hidden">
-              <table className="w-full text-sm">
-                <tbody>
-                  {dataRows.map((row, i) => (
-                    <tr
-                      key={i}
-                      className="border-b last:border-0 hover:bg-muted/50 transition-colors"
-                    >
-                      <td className="px-6 py-4 font-medium text-foreground">
-                        {row.label}
-                      </td>
-                      <td className="px-6 py-4 text-right text-muted-foreground">
-                        {row.value || "—"}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="max-w-md space-y-0">
+              {dataRows.map((row, i) => (
+                <div
+                  key={i}
+                  className="flex justify-between py-3 border-b border-border/50 last:border-0"
+                >
+                  <span className="font-medium text-foreground">{row.label}</span>
+                  <span className="text-muted-foreground">{row.value || "—"}</span>
+                </div>
+              ))}
             </div>
 
             {comment && comment.value && (
-              <p className="mt-4 text-center text-sm text-muted-foreground italic">
+              <p className="mt-6 text-sm text-muted-foreground italic">
                 {comment.value}
               </p>
             )}
