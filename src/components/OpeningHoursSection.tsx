@@ -64,7 +64,7 @@ const OpeningHoursSection = () => {
 
         {weekRow && (
           <p className="text-lg font-semibold text-muted-foreground mb-8">
-            {weekRow.label} {weekRow.value && `– ${weekRow.value}`}
+            {weekRow.label} {weekRow.value}
           </p>
         )}
 
