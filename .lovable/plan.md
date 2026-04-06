@@ -1,24 +1,17 @@
 
 
-## Flytta "Vårt erbjudande" ovanför "Öppettider"
+## Ta bort strecket mellan "Vecka" och veckonumret
 
-Byt ordningen på komponenterna i `src/pages/Index.tsx` så att `<ServicesSection />` renderas före `<OpeningHoursSection />`.
+### Ändring i `src/components/OpeningHoursSection.tsx`
 
-### Ändring i `src/pages/Index.tsx`
-
-Nuvarande ordning:
+Ändra raden som visar veckonumret från:
 ```
-<AboutSection />
-<OpeningHoursSection />
-<ServicesSection />
+{weekRow.label} {weekRow.value && `– ${weekRow.value}`}
 ```
-
-Ny ordning:
+till:
 ```
-<AboutSection />
-<ServicesSection />
-<OpeningHoursSection />
+{weekRow.label} {weekRow.value}
 ```
 
-Uppdatera även eventuella navigeringslänkar i `Navbar.tsx` om de förlitar sig på sektionsordningen.
+Detta tar bort tankstrecket (–) så det blir "Vecka 15" istället för "Vecka – 15".
 
